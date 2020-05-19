@@ -16,6 +16,7 @@ steps:
     command: 'install'
     artifactoryService: 'eco'
     sourceRepo: 'npm'
+    collectBuildInfo: true
     threads: '10'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
