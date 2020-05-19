@@ -59,3 +59,14 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: true
+
+- task: ArtifactoryBuildPromotion@1
+  inputs:
+    artifactoryService: 'eco'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    targetRepo: 'staging-local'
+    status: 'Released'
+    includeDependencies: false
+    copy: false
+    dryRun: false
