@@ -51,8 +51,10 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
 
+
 - task: ArtifactoryXrayScan@1
   inputs:
+    artifactoryService: 'eco'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: true
