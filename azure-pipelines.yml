@@ -22,7 +22,7 @@ steps:
     sourceRepo: 'npm'
     collectBuildInfo: true
     threads: '10'
-    buildName: '$(Build.DefinitionName)'
+    buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
     includeEnvVars: true
 
@@ -44,20 +44,20 @@ steps:
               ]
             }
     collectBuildInfo: true
-    buildName: '$(Build.DefinitionName)'
+    buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
     failNoOp: true
 
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
     artifactoryService: 'eco'
-    buildName: '$(Build.DefinitionName)'
+    buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
 
 
 - task: ArtifactoryXrayScan@1
   inputs:
     artifactoryService: 'eco'
-    buildName: '$(Build.DefinitionName)'
+    buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: true
