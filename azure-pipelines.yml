@@ -24,6 +24,7 @@ steps:
     threads: '10'
     buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
+    module: 'extension'
     includeEnvVars: true
 
 - script: |
@@ -36,17 +37,20 @@ steps:
     specSource: 'taskConfiguration'
     fileSpec: |
       {
-              "files": [
-                {
-                  "pattern": "*.vsix",
-                  "target": "npm"
-                }
-              ]
-            }
+        "files": [
+          {
+            "pattern": "*.vsix",
+            "target": "npm"
+          }
+        ]
+      }
     collectBuildInfo: true
     buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
+    module: 'extension'
+    includeEnvVars: true
     failNoOp: true
+
 
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
