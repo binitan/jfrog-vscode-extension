@@ -30,17 +30,17 @@ steps:
     npm run package
   displayName: 'Build the package'
 
-  - task: ArtifactoryGenericUpload@2
-    inputs:
-      artifactoryService: 'eco'
-      specSource: 'taskConfiguration'
-      fileSpec: |
-        {
-          "files": [
-            {
-              "pattern": "*.vsix",
-              "target": "npm"
-            }
-          ]
-        }
-      failNoOp: true
+- task: ArtifactoryGenericUpload@2
+  inputs:
+    artifactoryService: 'eco'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "*.vsix",
+            "target": "npm"
+          }
+        ]
+      }
+    failNoOp: true
