@@ -20,11 +20,9 @@ steps:
     command: 'install'
     artifactoryService: 'eco'
     sourceRepo: 'npm'
-    collectBuildInfo: true
     threads: '10'
     buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
-    module: 'extension'
     includeEnvVars: true
 
 - script: |
@@ -47,7 +45,6 @@ steps:
     collectBuildInfo: true
     buildName: 'jfrog-vscode-extension'
     buildNumber: '$(Build.BuildNumber)'
-    module: 'extension'
     includeEnvVars: true
     failNoOp: true
 
