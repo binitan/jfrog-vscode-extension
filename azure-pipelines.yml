@@ -44,3 +44,15 @@ steps:
         ]
       }
     failNoOp: true
+
+- task: ArtifactoryPublishBuildInfo@1
+  inputs:
+    artifactoryService: 'eco'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+
+- task: ArtifactoryXrayScan@1
+  inputs:
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    allowFailBuild: true
