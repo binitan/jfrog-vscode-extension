@@ -46,7 +46,22 @@ steps:
     includeEnvVars: true
     failNoOp: true
 
-    
+- task: ArtifactoryCollectIssues@1
+  inputs:
+    artifactoryService: 'eco'
+    configSource: 'taskConfiguration'
+    taskConfig: |
+      version: 1
+      issues:
+        trackerName: GitHub
+        regexp: #([0-9]+)\s-\s(.+)
+        keyGroupIndex: 1
+        summaryGroupIndex: 2
+        trackerUrl: https://github.com/jfrog/jfrog-vscode-extension/issues
+        aggregate: true
+        aggregationStatus: RELEASED
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
 
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
