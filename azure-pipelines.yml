@@ -11,6 +11,7 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+
 - task: ArtifactoryNpm@2
   inputs:
     command: 'install'
