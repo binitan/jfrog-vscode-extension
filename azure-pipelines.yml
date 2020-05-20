@@ -62,7 +62,7 @@ steps:
         aggregationStatus: RELEASED
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    
+
 
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
@@ -75,7 +75,7 @@ steps:
     artifactoryService: 'eco'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    allowFailBuild: false
+    allowFailBuild: true
 
 - task: ArtifactoryBuildPromotion@1
   inputs:
