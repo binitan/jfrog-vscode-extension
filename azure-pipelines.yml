@@ -42,6 +42,7 @@ steps:
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    module: "jfrog-vscode-extension:1.3.0"
     includeEnvVars: true
     failNoOp: true
 
