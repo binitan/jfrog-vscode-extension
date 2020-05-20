@@ -62,6 +62,7 @@ steps:
         aggregationStatus: RELEASED
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    
 
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
