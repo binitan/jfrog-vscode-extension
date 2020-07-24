@@ -28,7 +28,7 @@ steps:
 
 - task: ArtifactoryGenericUpload@2
   inputs:
-    artifactoryService: 'eco'
+    artifactoryService: 'jfrog'
     specSource: 'taskConfiguration'
     fileSpec: |
       {
@@ -48,7 +48,7 @@ steps:
 
 - task: ArtifactoryCollectIssues@1
   inputs:
-    artifactoryService: 'eco'
+    artifactoryService: 'jfrog'
     configSource: 'taskConfiguration'
     taskConfig: |
       version: 1
@@ -66,20 +66,20 @@ steps:
 
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
-    artifactoryService: 'eco'
+    artifactoryService: 'jfrog'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
 
 - task: ArtifactoryXrayScan@1
   inputs:
-    artifactoryService: 'eco'
+    artifactoryService: 'jfrog'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: false
 
 - task: ArtifactoryBuildPromotion@1
   inputs:
-    artifactoryService: 'eco'
+    artifactoryService: 'jfrog'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     targetRepo: 'staging-local'
