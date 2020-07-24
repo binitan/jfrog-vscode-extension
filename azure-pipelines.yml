@@ -15,7 +15,7 @@ steps:
   inputs:
     command: 'install'
     artifactoryService: 'jfrog'
-    sourceRepo: 'npm-local'
+    sourceRepo: 'npm'
     collectBuildInfo: true
     threads: '10'
     buildName: '$(Build.DefinitionName)'
@@ -35,7 +35,7 @@ steps:
         "files": [
           {
             "pattern": "*.vsix",
-            "target": "npm-local"
+            "target": "npm"
           }
         ]
       }
